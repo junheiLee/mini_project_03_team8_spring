@@ -13,8 +13,8 @@
 <script>
 	var contextPath = "${pageContext.request.contextPath }";
 </script>
-<script type="text/javascript" src="${contextPath }/member/member.js"></script>
-<script type="text/javascript" src="${contextPath }/mypage/mypage.js"></script>
+<script type="text/javascript" src="${contextPath }/resources/static/js/member.js"></script>
+<script type="text/javascript" src="#"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -22,7 +22,7 @@
 		<header>
 			<!--로고 들어가는 곳 시작--->
 			<div id="logo">
-				<a href="${contextPath }/main"> <img
+				<a href="${contextPath }/"> <img
 					src="${contextPath }/resources/static/images/logo.gif" width="180" height="100" alt="nonageshop">
 				</a>
 			</div>
@@ -30,26 +30,26 @@
 			<nav id="catagory_menu">
 				<ul>
 					<c:choose>
-						<c:when test="${empty sessionScope.loginUser}">
-							<li><a href="${contextPath }/members/loginForm.do"
+						<c:when test="${empty sessionScope.loginMember}">
+							<li><a href="${contextPath }/member/login"
 								style="width: 110px;">LOGIN(CUSTOMER</a> <a
-								href="${contextPath }/admin/members/loginForm.do"
+								href="#"
 								style="width: 100px;">| ADMIN)</a></li>
 							<li>/</li>
-							<li><a href="${contextPath }/members/contract.do">JOIN</a></li>
+							<li><a href="#">JOIN</a></li>
 						</c:when>
 						<c:otherwise>
 							<li style="color: orange">
-								${sessionScope.loginUser.name}(${sessionScope.loginUser.id})</li>
-							<li><a href="${contextPath }/members/logout.do">LOGOUT</a></li>
+								${sessionScope.loginMember.name}(${sessionScope.loginMember.id})</li>
+							<li><a href="${contextPath }/member/logout">LOGOUT</a></li>
 						</c:otherwise>
 					</c:choose>
 					<li>/</li>
-					<li><a href="${contextPath }/carts/cartList">CART</a></li>
+					<li><a href="#">CART</a></li>
 					<li>/</li>
-					<li><a href="${contextPath }/orders/mypage">MY PAGE</a></li>
+					<li><a href="#">MY PAGE</a></li>
 					<li>/</li>
-					<li><a href="${contextPath }/qnas/qnaList">Q&amp;A(1:1)</a>
+					<li><a href="#">Q&amp;A(1:1)</a>
 					</li>
 				</ul>
 			</nav>

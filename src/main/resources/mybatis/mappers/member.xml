@@ -16,4 +16,9 @@
 		<result property="indate" column="indate" />
 	</resultMap>
 	
+	<select id="getMemberByIdAndPwd" parameterType="memberVO" resultMap="memberResult">
+		<![CDATA[
+			SELECT * FROM member WHERE id = #{id} AND pwd = #{pwd}
+		]]>
+	</select>
 </mapper>

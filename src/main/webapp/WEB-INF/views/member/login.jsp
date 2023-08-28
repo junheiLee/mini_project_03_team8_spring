@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>  
-<%@ include file="../layout/header.jsp" %>  
+<%@ include file="/WEB-INF/views/layout/header.jsp" %>  
 <%@ include file="sub_img.html"%> 
 <%@ include file="sub_menu.html" %>       
   <article>
     <h1>Login</h1>
-    <form method="post" action="${contextPath }/members/login.do">
+    <form method="post" action="${contextPath }/member/login_pro">
         <fieldset>
         <legend></legend>
           <label>User ID</label>
@@ -23,4 +23,4 @@
         </div>
     </form>  
   </article>
-<%@ include file="../layout/footer.jsp" %>      
+<%@ include file="/WEB-INF/views/layout/footer.jsp" %>      
