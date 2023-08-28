@@ -17,9 +17,9 @@
         <div id="buttons">
             <input type="submit" value="로그인" class="submit">
             <input type="button" value="회원가입" class="cancel"
-                 onclick="location='${contextPath }/members/contract.do' ">
+                 onclick="location='${contextPath }/member/contract' ">
             <input type="button" value="아이디 비밀번호 찾기" class="submit"
-                 onclick="location='${contextPath }/members/find_id_form'">     
+                 onclick="location='${contextPath }/member/find_id_form'">     
         </div>
     </form>  
   </article>

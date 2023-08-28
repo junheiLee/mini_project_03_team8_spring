@@ -16,9 +16,49 @@
 		<result property="indate" column="indate" />
 	</resultMap>
 	
+	<resultMap type="addressVO" id="addressResult">
+		<result property="zipNum" column="zip_num" />
+		<result property="sido" column="sido" />
+		<result property="gugun" column="gugun" />
+		<result property="dong" column="dong" />
+		<result property="zipCode" column="zip_code" />
+		<result property="bunji" column="bunji" />
+	</resultMap>
+	
 	<select id="getMemberByIdAndPwd" parameterType="memberVO" resultMap="memberResult">
 		<![CDATA[
 			SELECT * FROM member WHERE id = #{id} AND pwd = #{pwd}
+		]]>
+	</select>
+	
+	<select id="getMemberById" resultMap="memberResult">
+		<![CDATA[
+			SELECT * FROM member WHERE id = #{id}
+		]]>
+	</select>
+	
+	<select id="selectAddressByDong" resultMap="addressResult">
+		<![CDATA[
+			SELECT * FROM address WHERE dong LIKE '%' || #{dong} || '%'
+		]]>
+	</select>
+	
+	<insert id="insertMember" parameterType="memberVO">
+		<![CDATA[
+			INSERT INTO member (id, pwd, name, email, zip_num, address, phone)
+			VALUES (#{id}, #{pwd}, #{name}, #{email}, #{zipNum}, #{address}, #{phone})
+		]]>
+	</insert>
+	
+	<select id="findMemberId" parameterType="memberVO" resultType="string">
+		<![CDATA[
+			SELECT id FROM member WHERE name = #{name} AND email = #{email}
+		]]>
+	</select>
+	
+	<select id="findMemberPassword" parameterType="memberVO" resultType="string">
+		<![CDATA[
+			SELECT pwd FROM member WHERE id = #{id} AND name = #{name} AND email = #{email}
 		]]>
 	</select>
 </mapper>
