@@ -36,7 +36,7 @@
 								href="#"
 								style="width: 100px;">| ADMIN)</a></li>
 							<li>/</li>
-							<li><a href="#">JOIN</a></li>
+							<li><a href="${contextPath }/member/contract">JOIN</a></li>
 						</c:when>
 						<c:otherwise>
 							<li style="color: orange">
