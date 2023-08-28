@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>  
-<%@ include file="../header.jsp" %>	 
+<%@ include file="/WEB-INF/views/layout/header.jsp" %>	 
 <%@ include file="sub_img.html"%> 
 <%@ include file="sub_menu.html" %>   
   <article>
@@ -194,4 +194,4 @@ method="post" name="formm">
       <input type="button" value="Next" class="submit"  onclick="go_next()" style="float: right;"> 
     </form>
   </article>
-<%@ include file="../footer.jsp" %>  
+<%@ include file="/WEB-INF/views/layout/footer.jsp" %>  
