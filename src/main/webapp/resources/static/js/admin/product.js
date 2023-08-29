@@ -73,7 +73,7 @@ function go_mov(contextPath)
 //projectList.jsp
 function go_search(contextPath) {
 	var theForm = document.frm;
-	theForm.action =  contextPath + "/admin/items/list";
+	theForm.action =  contextPath + "/admin/item/listProduct";
 	theForm.submit();
 }
 
