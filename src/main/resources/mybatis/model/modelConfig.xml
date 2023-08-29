@@ -7,5 +7,6 @@
 		<typeAlias type="com.team8.shopping.vo.MemberVO" alias="memberVO" />
 		<typeAlias type="com.team8.shopping.vo.ItemVO" alias="itemVO" />
 		<typeAlias type="com.team8.shopping.vo.AddressVO" alias="addressVO" />
+		<typeAlias type="com.team8.shopping.vo.WorkerVO" alias="workerVO" />
 	</typeAliases>
 </configuration>

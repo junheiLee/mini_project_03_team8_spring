@@ -29,4 +29,6 @@
 			SELECT * FROM  best_pro_view
 		]]>
 	</select>
+	
+	<select id="listProduct"></select>
 </mapper>

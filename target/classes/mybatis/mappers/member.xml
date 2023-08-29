@@ -61,4 +61,10 @@
 			SELECT pwd FROM member WHERE id = #{id} AND name = #{name} AND email = #{email}
 		]]>
 	</select>
+	
+	<select id="workerCheck" parameterType="workerVO" resultType="workerVO">
+		<![CDATA[
+			SELECT * FROM worker WHERE id = #{id} AND pwd = #{pwd}
+		]]>
+	</select>
 </mapper>

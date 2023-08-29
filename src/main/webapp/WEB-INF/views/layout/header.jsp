@@ -33,7 +33,7 @@
 						<c:when test="${empty sessionScope.loginMember}">
 							<li><a href="${contextPath }/member/login"
 								style="width: 110px;">LOGIN(CUSTOMER</a> <a
-								href="#"
+								href="${contextPath }/admin/member/login"
 								style="width: 100px;">| ADMIN)</a></li>
 							<li>/</li>
 							<li><a href="${contextPath }/member/contract">JOIN</a></li>
