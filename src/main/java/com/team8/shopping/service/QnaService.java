@@ -20,9 +20,9 @@ public class QnaService {
 		return qnaDAO.selectQnaById(id);
 	}
 
-	public QnaVO detailQna(int qseq) throws DataAccessException {
+	public QnaVO getQna(int qseq) throws DataAccessException {
 		QnaVO qna = null;
-		qna = qnaDAO.detailQna(qseq);
+		qna = qnaDAO.getQna(qseq);
 		return qna;
 	}
 

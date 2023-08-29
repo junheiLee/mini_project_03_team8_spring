@@ -2,20 +2,21 @@ package com.team8.shopping.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.team8.shopping.service.QnaService;
+import com.team8.shopping.vo.MemberVO;
 import com.team8.shopping.vo.QnaVO;
 
 @Controller
@@ -25,20 +26,28 @@ public class QnaController {
 	@Autowired
 	private QnaService qnaService;
 
-	
 	/** 목록보기 **/
 	@RequestMapping(value = "/qnaList", method = RequestMethod.GET)
-	public ModelAndView qnaList(@RequestParam("id") String id) {
+	public ModelAndView qnaList(HttpSession session) {
+		
+		MemberVO loginMember = (MemberVO) session.getAttribute("loginMember");
+   
+        if (loginMember == null) {
+            return new ModelAndView("redirect:/member/login");
+        }
+
+        String id = loginMember.getId();
+        System.out.println("User ID: " + id);
 		List<QnaVO> qnaList = qnaService.listQna(id);
-        ModelAndView mav = new ModelAndView("qna/qnaList");
-        mav.addObject("qnaList", qnaList);
+		ModelAndView mav = new ModelAndView("qna/qnaList");
+		mav.addObject("qnaList", qnaList);
         return mav;
 	}
 	
 	/** 상세화면  **/
 	@RequestMapping(value = "/qnaView", method = RequestMethod.GET)
 	 public ModelAndView qnaView(@RequestParam("qseq") int qseq) {
-		QnaVO qna = qnaService.detailQna(qseq);
+		QnaVO qna = qnaService.getQna(qseq);
         ModelAndView mav = new ModelAndView("qna/qnaView");
         mav.addObject("qnaVO", qna);
         return mav;
@@ -59,6 +68,7 @@ public class QnaController {
         mav.addObject("qnaList", qnaList);
         return mav;
     }
-		
+	
+
 		
 }

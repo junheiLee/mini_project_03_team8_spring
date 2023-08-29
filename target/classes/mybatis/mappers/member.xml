@@ -21,4 +21,10 @@
 			SELECT * FROM member WHERE id = #{id} AND pwd = #{pwd}
 		]]>
 	</select>
+	
+		<select id="workerCheck" parameterType="workerVO" resultType="workerVO">
+		<![CDATA[
+			SELECT * FROM worker WHERE id = #{id} AND pwd = #{pwd}
+		]]>
+	</select>
 </mapper>

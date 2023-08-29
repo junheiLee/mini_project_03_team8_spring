@@ -21,7 +21,7 @@ public class QnaDAO {
 		return qnaList;
 	}
 
-	public QnaVO detailQna(int qseq) throws DataAccessException {
+	public QnaVO getQna(int qseq) throws DataAccessException {
 		QnaVO qna = null;
 		qna = sqlSession.selectOne("mapper.qna.selectQnaByNo", qseq);
 		return qna;

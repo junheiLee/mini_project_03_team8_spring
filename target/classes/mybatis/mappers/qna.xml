@@ -19,6 +19,12 @@
 			SELECT * FROM qna WHERE id = #{id} ORDER BY qseq DESC
 		]]>
 	</select>
+	<select id="selectAllQnas" resultMap="qnaResult">
+		<![CDATA[
+			SELECT * FROM qna ORDER BY indate DESC
+		]]>
+	</select>
+	
 	<select id="selectQnaByNo" resultMap="qnaResult">
 		<![CDATA[
 			SELECT * FROM qna WHERE qseq = #{qseq}
@@ -27,8 +33,18 @@
 	
 	<insert id="insertQna"  parameterType="qnaVO">
 		<![CDATA[
-		 insert into qna(qseq, id, subject, content)
-		 values((select max(qseq) + 1 from qna), #{id}, #{subject}, #{content})
+		 INSERT INTO qna(qseq, id, subject, content)
+		 VALUES((select max(qseq) + 1 from qna), #{id}, #{subject}, #{content})
 		]]>      
 	</insert>
+	
+	   
+   <update id="updateQna"  parameterType="qnaVO">
+     <![CDATA[
+	     UPDATE qna
+	     SET reply=#{reply}, rep='2'
+	     WHERE
+	     qseq=#{qseq}
+      ]]>      
+   </update> 
 </mapper>

@@ -33,7 +33,7 @@
 						<c:when test="${empty sessionScope.loginMember}">
 							<li><a href="${contextPath }/member/login"
 								style="width: 110px;">LOGIN(CUSTOMER</a> <a
-								href="#"
+								href="${contextPath }/admin/member/login"
 								style="width: 100px;">| ADMIN)</a></li>
 							<li>/</li>
 							<li><a href="#">JOIN</a></li>
@@ -49,7 +49,7 @@
 					<li>/</li>
 					<li><a href="#">MY PAGE</a></li>
 					<li>/</li>
-					<li><a href="${contextPath }/qnas/qnaList?id=${sessionScope.loginMember.id}">Q&amp;A(1:1)</a>
+					<li><a href="${contextPath }/qnas/qnaList">Q&amp;A(1:1)</a>
 					</li>
 				</ul>
 			</nav>
