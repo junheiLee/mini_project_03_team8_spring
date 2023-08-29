@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/admin/header.jsp"%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%@ include file="/WEB-INF/views/admin/header.jsp"%>
+<%@ include file="/WEB-INF/views/admin/sub_menu.jsp"%>
 
 <article>
 	<h1>상품 상세 보기</h1>
@@ -34,7 +34,7 @@
 				<th>상품이미지</th>
 				<td colspan="5" align="center">
 					<!--[7] 상품 이미지를 출력하기 --> <img
-					src="${contextPath }/product_images/${productVO.image}" width="200pt">
+					src="${contextPath}/resources/static/images/product_images/${productVO.image}" width="200pt">
 				</td>
 			</tr>
 
@@ -46,6 +46,6 @@
 		<input class="btn" type="button" value="목록" onClick="go_list('${tpage}', '${contextPath}')">
 	</form>
 </article>
-<%@ include file="/admin/footer.jsp"%>
+<%@ include file="/WEB-INF/views/admin/footer.jsp"%>
 </body>
 </html>

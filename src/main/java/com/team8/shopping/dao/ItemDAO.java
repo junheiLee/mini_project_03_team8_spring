@@ -22,4 +22,12 @@ public class ItemDAO {
 	public List<ItemVO> listBestProduct() throws DataAccessException {
 		return sqlSession.selectList("mapper.item.listBestProduct");
 	}
+	
+	public  List<ItemVO> getProduct(String pseq) {
+		return sqlSession.selectList("mapper.item.getProduct", pseq);
+	}
+	
+	public List<ItemVO> listKindProduct(String kind){
+		return sqlSession.selectList("mapper.item.listKindProduct", kind);
+	}
 }
