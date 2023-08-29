@@ -9,5 +9,7 @@
 		<typeAlias type="com.team8.shopping.vo.QnaVO" alias="qnaVO" />
 		<typeAlias type="com.team8.shopping.vo.AddressVO" alias="addressVO" />
 		<typeAlias type="com.team8.shopping.vo.WorkerVO" alias="workerVO" />
+		<typeAlias type="com.team8.shopping.vo.CartVO" alias="cartVO" />
+		<typeAlias type="com.team8.shopping.vo.OrderVO" alias="orderVO" />
 	</typeAliases>
 </configuration>
