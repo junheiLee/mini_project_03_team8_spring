@@ -49,5 +49,4 @@
       </div>
     </form>
   </article>
-<%@ include file="/WEB-INF/views/layout/footer.jsp" %>   
-  
+<%@ include file="/WEB-INF/views/layout/footer.jsp" %>

@@ -194,4 +194,4 @@ method="post" name="formm">
       <input type="button" value="Next" class="submit"  onclick="go_next()" style="float: right;"> 
     </form>
   </article>
-<%@ include file="/WEB-INF/views/layout/footer.jsp" %>   
+<%@ include file="/WEB-INF/views/layout/footer.jsp" %>  

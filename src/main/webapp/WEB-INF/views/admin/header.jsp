@@ -33,4 +33,6 @@
 			<input class="btn" type="button" value="logout" style="float: right;"
 				onClick="location.href='${contextPath }/admin/member/logout'">
 		</header>
+
 		<div class="clear"></div>
+

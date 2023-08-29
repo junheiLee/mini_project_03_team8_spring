@@ -49,7 +49,7 @@
 					<li>/</li>
 					<li><a href="#">MY PAGE</a></li>
 					<li>/</li>
-					<li><a href="#">Q&amp;A(1:1)</a>
+					<li><a href="${contextPath }/qnas/qnaList">Q&amp;A(1:1)</a>
 					</li>
 				</ul>
 			</nav>

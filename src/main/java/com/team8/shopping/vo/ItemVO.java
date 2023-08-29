@@ -3,7 +3,6 @@ package com.team8.shopping.vo;
 import java.sql.Timestamp;
 
 public class ItemVO {
-
 	private int pseq;
 	private String name;
 	private String kind;
@@ -15,8 +14,9 @@ public class ItemVO {
 	private String useyn;
 	private String bestyn;
 	private Timestamp indate;
-	
+
 	public ItemVO() {
+
 	}
 
 	public int getPseq() {
@@ -106,5 +106,4 @@ public class ItemVO {
 	public void setIndate(Timestamp indate) {
 		this.indate = indate;
 	}
-	
 }

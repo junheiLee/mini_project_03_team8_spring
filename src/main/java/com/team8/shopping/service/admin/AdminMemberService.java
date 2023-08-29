@@ -12,9 +12,12 @@ public class AdminMemberService {
 
 	@Autowired
 	private AdminMemberDAO adminMemberDAO;
-	
+
 	@Transactional(readOnly = true)
 	public WorkerVO loginPro(WorkerVO workerVO) {
 		return adminMemberDAO.workerCheck(workerVO);
 	}
+
 }
+
+

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/admin/header.jsp"%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%@ include file="/WEB-INF/views/admin/header.jsp"%>
+<%@ include file="/WEB-INF/views/admin/sub_menu.jsp"%>
 <script type="text/javascript">
 	function go_list() {
 		var theForm = document.frm;
@@ -39,7 +39,8 @@
 				<table id="orderList">
 					<tr>
 						<td colspan="2">
-							<img src="${contextPath }/admin/images/opinionimg01.gif">
+							<img src="${contextPath }/resources/static/admin/opinionimg01.gif">
+
 						</td>
 					</tr>
 					<tr>
@@ -63,6 +64,6 @@
 		<input type="button" class="btn" value="목록" onClick="go_list()">
 	</form>
 </article>
-<%@ include file="/admin/footer.jsp"%>
+<%@ include file="/WEB-INF/views/admin/footer.jsp"%>
 </body>
 </html>

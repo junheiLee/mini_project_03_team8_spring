@@ -15,7 +15,7 @@ import com.team8.shopping.vo.WorkerVO;
 @Controller
 @RequestMapping("/admin/member")
 public class AdminMemberController {
-	
+
 	@Autowired
 	private AdminMemberService adminMemberService;
 
@@ -23,7 +23,7 @@ public class AdminMemberController {
 	public String login() {
 		return "admin/main";
 	}
-	
+
 	@RequestMapping(value = "/login_pro", method = RequestMethod.POST)
 	public String loginPro(@ModelAttribute WorkerVO workerVO, HttpSession session, Model model) {
 		WorkerVO loginWorker = adminMemberService.loginPro(workerVO);
@@ -35,10 +35,14 @@ public class AdminMemberController {
 			return "admin/main";
 		}
 	}
-	
+
 	@RequestMapping(value = "/logout")
-	public String logout(HttpSession session) {
+	public String logout(HttpSession session){
 		session.invalidate();
 		return "redirect:/admin/member/login";
 	}
+
 }
+
+
+
