@@ -7,6 +7,7 @@ public class WorkerVO {
 	private String name;
 	private String phone;
 
+	
 	public WorkerVO() {
 	}
 
@@ -41,5 +42,4 @@ public class WorkerVO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
 }

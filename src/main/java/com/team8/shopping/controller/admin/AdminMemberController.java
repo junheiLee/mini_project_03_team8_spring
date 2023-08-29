@@ -37,8 +37,12 @@ public class AdminMemberController {
 	}
 
 	@RequestMapping(value = "/logout")
-	public String logout(HttpSession session) {
+	public String logout(HttpSession session){
 		session.invalidate();
 		return "redirect:/admin/member/login";
 	}
+
 }
+
+
+

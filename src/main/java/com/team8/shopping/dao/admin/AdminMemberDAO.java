@@ -13,8 +13,10 @@ public class AdminMemberDAO {
 	@Autowired
 	private SqlSession sqlSession;
 
+
 	public WorkerVO workerCheck(WorkerVO workerVO) throws DataAccessException {
 		System.out.println(workerVO.getId() + "============" + workerVO.getPwd());
 		return sqlSession.selectOne("mapper.member.workerCheck", workerVO);
 	}
+	
 }

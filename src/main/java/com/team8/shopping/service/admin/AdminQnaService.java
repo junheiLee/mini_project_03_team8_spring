@@ -32,6 +32,6 @@ public class AdminQnaService {
 		adminQnaDAO.resaveQna(qnaVO);
 		
 	}
-	
+
 	
 }

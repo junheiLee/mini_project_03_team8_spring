@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/admin/header.jsp"%>
-<%@ include file="/WEB-INF/views/admin/sub_menu.jsp"%>
+<%@ include file="/admin/header.jsp"%>
+<%@ include file="/admin/sub_menu.jsp"%>
 <script type="text/javascript">
 	function go_search() {
 		document.frm.action = "${contextPath }/admin/members/memberList";
@@ -53,6 +53,6 @@
 		</table>
 	</form>
 </article>
-<%@ include file="/WEB-INF/views/admin/footer.jsp"%>
+<%@ include file="/admin/footer.jsp"%>
 </body>
 </html>

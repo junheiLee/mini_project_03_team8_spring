@@ -1,18 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>  
-<%@ include file="/WEB-INF/views/layout/header.jsp" %>   
+<%@ include file="/WEB-INF/views/layout/header.jsp" %>  
 <%@ include file="sub_img.html"%> 
-<%@ include file="sub_menu.html" %>   
+<%@ include file="sub_menu.html" %>
+<script>
+	$(document).ready(function() {
+	    $("#userId").on("input", function() {
+	    	document.formm.reid.value = "";
+			$("#idAvailabilityMessage").text("");
+		});
+	});
+</script>   
   <article>
     <h2>Join Us</h2>
-    <form id="join" action="${contextPath }/members/join.do" method="post" name="formm">
+    <form id="join" action="${contextPath }/member/join_pro" method="post" name="formm">
       <fieldset>
         <legend>Basic Info</legend>
         <label>User ID</label>
-        <input type="text"      name="id"        size="12"  >
+        <input type="text"  id="userId"    name="id"        size="12"  >
         <input type="hidden"    name="reid">
         <input type="button"    value="중복 체크"  class="dup" onclick="idcheck()"><br>
-        <label>Password</label> 
+        <span id="idAvailabilityMessage" style="margin-left: 145px;"></span><br>
+        <label>Password</label> 	
         <input type="password"  name="pwd"><br> 
         <label>Retype Password</label> 
         <input type="password"  name="pwdCheck"><br> 
@@ -41,4 +50,3 @@
     </form>
   </article>
 <%@ include file="/WEB-INF/views/layout/footer.jsp" %>
-  

@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>  
-<%@ include file="/WEB-INF/views/layout/header.jsp" %>	 
+<%@ include file="/WEB-INF/views/layout/header.jsp" %>  
 <%@ include file="sub_img.html"%> 
 <%@ include file="sub_menu.html" %>   
   <article>
     <h2>Join Us</h2>
-    <form id="join" action="${contextPath }/members/joinForm.do" 
+    <form id="join" action="${contextPath }/member/join" 
 method="post" name="formm">
         언제나 새로운 즐거움이 가득한 Nonage의 회원가입 페이지 입니다. <br>
        Nonage의 회원가입은 무료이며, 회원님의 개인신상에 관한 정보는 

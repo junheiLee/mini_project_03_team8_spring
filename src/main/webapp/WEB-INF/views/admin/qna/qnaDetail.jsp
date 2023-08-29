@@ -40,6 +40,7 @@
 					<tr>
 						<td colspan="2">
 							<img src="${contextPath }/resources/static/admin/opinionimg01.gif">
+
 						</td>
 					</tr>
 					<tr>
