@@ -8,7 +8,7 @@
 	<form name="frm" method="post">
 		<table>
 			<tr>
-				<td width="642">상품명 <input type="text" name="key"> 
+				<td width="642">상품명 <input type="text" name="keyword"> 
 					<input class="btn" type="button" name="btn_search" value="검색" onClick="go_search('${contextPath}')"> 
 					<input class="btn" type="button" name="btn_total" value="전체보기 " onClick="go_total('${contextPath}')"> 
 					<input class="btn" type="button" name="btn_write" value="상품등록"  onClick="go_wrt('${contextPath}')">
@@ -56,7 +56,43 @@
 			</c:choose>
 		</table>
 	</form>
+	<div class="pagination" style="text-align: center; margin-top: 20px;">
+		<c:choose>
+			<c:when test="${pageBean.prevPage <= 0 }">
+				<button type="button" disabled>이전</button>
+			</c:when>
+			<c:otherwise>
+				<button type="button"
+					onclick="location.href='${contextPath}/admin/item/listProduct?page=${pageBean.prevPage}&keyword=${keyword }'">이전</button>
+			</c:otherwise>
+		</c:choose>
+
+		<span class="pagination-numbers"> <c:forEach var="idx"
+				begin="${pageBean.min}" end="${pageBean.max}">
+				<c:choose>
+					<c:when test="${idx == pageBean.currentPage }">
+						<a href="${contextPath}/admin/item/listProduct?page=${idx}&keyword=${keyword }"
+							style="color: blue; font-weight: bold;">${idx }</a>
+					</c:when>
+					<c:otherwise>
+						<a href="${contextPath}/admin/item/listProduct?page=${idx}&keyword=${keyword }"
+							style="color: blue; font-weight: lighter;">${idx }</a>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+		</span>
+
+		<c:choose>
+			<c:when test="${pageBean.max >= pageBean.pageCnt }">
+				<button type="button" class="pagination-button" disabled>다음</button>
+			</c:when>
+			<c:otherwise>
+				<button type="button"
+					onclick="location.href='${contextPath}/admin/item/listProduct?page=${pageBean.nextPage}&keyword=${keyword }'">다음</button>
+			</c:otherwise>
+		</c:choose>
+	</div>
 </article>
-<%@ include file="/admin/footer.jsp"%>
+<%@ include file="/WEB-INF/views/admin/footer.jsp"%>
 </body>
 </html>

@@ -30,5 +30,28 @@
 		]]>
 	</select>
 	
-	<select id="listProduct"></select>
+	<select id="selectAllProduct" resultMap="itemResult">
+		<![CDATA[
+			SELECT * FROM product ORDER BY useyn DESC, pseq DESC
+		]]>
+	</select>
+	
+	<select id="selectProductByKeyword" resultMap="itemResult">
+		<![CDATA[
+			SELECT * FROM product WHERE name LIKE '%' || #{keyword} || '%'
+			ORDER BY useyn DESC, pseq DESC
+		]]>
+	</select>
+	
+	<select id="getProductCnt" resultType="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM product
+		]]>
+	</select>
+	
+	<select id="getProductCntByKeyword" resultType="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM product WHERE name LIKE '%' || #{keyword} || '%'
+		]]>
+	</select>
 </mapper>

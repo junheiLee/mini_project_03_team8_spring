@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>freeflux Admin</title>
 <link rel="stylesheet" href="${contextPath }/resources/static/css/admin.css">
-<script type="text/javascript" src="${contextPath }/resources/static/js/product.js"></script>
+<script type="text/javascript" src="${contextPath }/resources/static/js/admin/product.js"></script>
 <script>
 	var contextPath = "${pageContext.request.contextPath }";
 </script>
