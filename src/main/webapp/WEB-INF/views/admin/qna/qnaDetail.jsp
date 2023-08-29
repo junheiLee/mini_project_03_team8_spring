@@ -39,7 +39,7 @@
 				<table id="orderList">
 					<tr>
 						<td colspan="2">
-							<img src="${contextPath }/resources/static/admin/opinionimg01.gif">
+							<img src="${contextPath }/resources/static/images/admin/opinionimg01.gif">
 
 						</td>
 					</tr>
