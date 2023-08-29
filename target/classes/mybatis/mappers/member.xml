@@ -67,4 +67,10 @@
 			SELECT * FROM worker WHERE id = #{id} AND pwd = #{pwd}
 		]]>
 	</select>
+	
+	<select id="selectMember" resultMap="memberResult">
+		<![CDATA[
+			SELECT * FROM member WHERE name LIKE '%' || #{keyword} || '%' ORDER BY indate DESC
+		]]>
+	</select>
 </mapper>

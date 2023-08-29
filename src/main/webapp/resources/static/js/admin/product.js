@@ -79,8 +79,8 @@ function go_search(contextPath) {
 
 function go_total(contextPath) {
 	var theForm = document.frm;
-	theForm.key.value = "";
-	theForm.action =  contextPath + "/admin/items/list";
+	theForm.keyword.value = "";
+	theForm.action =  contextPath + "/admin/item/listProduct";
 	theForm.submit();
 }
 
