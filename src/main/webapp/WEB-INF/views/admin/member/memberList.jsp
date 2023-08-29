@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/admin/header.jsp"%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%@ include file="/WEB-INF/views/admin/header.jsp"%>
+<%@ include file="/WEB-INF/views/admin/sub_menu.jsp"%>
 <script type="text/javascript">
 	function go_search() {
-		document.frm.action = "${contextPath }/admin/members/memberList";
+		document.frm.action = "${contextPath }/admin/member/listMember";
 		document.frm.submit();
 	}
 </script>
@@ -15,7 +15,7 @@
 		<table style="float: right;">
 			<tr>
 				<td>회원 이름 
-				<input type="text" name="key"> <input class="btn" type="button" value="검색" onclick="go_search()">
+				<input type="text" name="keyword"> <input class="btn" type="button" value="검색" onclick="go_search()">
 				</td>
 			</tr>
 		</table>
@@ -53,6 +53,6 @@
 		</table>
 	</form>
 </article>
-<%@ include file="/admin/footer.jsp"%>
+<%@ include file="/WEB-INF/views/admin/footer.jsp"%>
 </body>
 </html>

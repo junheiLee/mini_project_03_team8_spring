@@ -1,5 +1,7 @@
 package com.team8.shopping.controller.admin;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.team8.shopping.service.admin.AdminMemberService;
+import com.team8.shopping.vo.MemberVO;
 import com.team8.shopping.vo.WorkerVO;
 
 @Controller
@@ -40,6 +44,14 @@ public class AdminMemberController {
 	public String logout(HttpSession session){
 		session.invalidate();
 		return "redirect:/admin/member/login";
+	}
+	
+	@RequestMapping(value = "/listMember", method = {RequestMethod.GET, RequestMethod.POST})
+	public String listMember(@RequestParam(value = "keyword", required = false, defaultValue = "") String keyword,
+												Model model) {
+		List<MemberVO> memberList = adminMemberService.listMember(keyword);
+		model.addAttribute("memberList", memberList);
+		return "admin/member/memberList";
 	}
 
 }
