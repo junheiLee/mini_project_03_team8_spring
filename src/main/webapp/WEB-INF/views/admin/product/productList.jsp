@@ -36,7 +36,7 @@
 						<tr>
 							<td height="23" align="center">${productVO.pseq}</td>
 							<td style="text-align: left; padding-left: 50px; padding-right: 0px;">
-								<a href="#" onClick="go_detail('${tpage}', '${productVO.pseq}', '${contextPath }')">
+								<a href="#" onClick="go_detail('${pageBean.currentPage}', '${productVO.pseq}', '${contextPath }')">
 									${productVO.name} 
 								</a>
 							</td>

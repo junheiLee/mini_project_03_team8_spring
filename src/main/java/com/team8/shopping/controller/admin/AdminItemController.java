@@ -31,4 +31,15 @@ public class AdminItemController {
 		model.addAttribute("keyword", keyword);
 		return "admin/product/productList";
 	}
+	
+	@RequestMapping(value = "/detailProduct")
+	public String itemDetail(@RequestParam("page") String page, 
+											@RequestParam("pseq") String pseq,
+											Model model) {
+		List<ItemVO> getProduct = adminItemService.getProduct(pseq);
+	    if (!getProduct.isEmpty()) {
+	        model.addAttribute("productVO", getProduct.get(0));
+	    }
+	    return "admin/product/productDetail";
+	}
 }

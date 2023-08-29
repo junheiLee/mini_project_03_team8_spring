@@ -44,4 +44,8 @@ public class AdminItemService {
 		pageBean = new PageBean(productCnt, currentPage, listCnt, paginationCnt);
 		return pageBean;
 	}
+	
+	public List<ItemVO> getProduct(String pseq) {
+		return adminItemDAO.getProduct(pseq);
+	}
 }

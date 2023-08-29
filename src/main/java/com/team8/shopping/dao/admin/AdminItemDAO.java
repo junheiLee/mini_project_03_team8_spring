@@ -35,4 +35,8 @@ public class AdminItemDAO {
 	public int getProductCntByKeyword(String keyword) throws DataAccessException {
 		return sqlSession.selectOne("mapper.item.getProductCntByKeyword", keyword);
 	}
+	
+	public  List<ItemVO> getProduct(String pseq) {
+		return sqlSession.selectList("mapper.item.getProduct", pseq);
+	}
 }

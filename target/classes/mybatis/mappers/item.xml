@@ -54,4 +54,16 @@
 			SELECT COUNT(*) FROM product WHERE name LIKE '%' || #{keyword} || '%'
 		]]>
 	</select>
+	
+	<select id="getProduct" resultType="itemVO">
+		<![CDATA[
+			SELECT * FROM product WHERE pseq = #{pseq}
+		]]>
+	</select>
+	
+	<select id="listKindProduct" resultType="itemVO">
+		<![CDATA[
+			SELECT * FROM product WHERE kind = #{kind} and useyn like('y')
+		]]>
+	</select>
 </mapper>
