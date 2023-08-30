@@ -28,6 +28,24 @@
 <br>
 
 ### 페이징 클래스 분리
+1. 단순화된 페이징 로직
+2. 유연한 확장성
+3. 재사용 가능한 모듈
+
+- 속성
+min: 현재 페이지 범위의 최소 페이지 번호
+max: 현재 페이지 범위의 최대 페이지 번호
+prevPage: 이전 페이지 번호
+nextPage: 다음 페이지 번호
+pageCnt: 전체 페이지 개수
+currentPage: 현재 페이지 번호
+
+- 생성자
+PageBean(int productCnt, int currentPage, int listCnt, int paginationCnt): 페이지 정보를 초기화하고 계산합니다.
+productCnt: 전체 데이터 개수
+currentPage: 현재 페이지 번호
+listCnt: 한 페이지당 보여줄 데이터 개수
+paginationCnt: 한 번에 표시할 페이지 번호 개수
 
 1. Action 클래스에 있는 비즈니스 로직을 Service 클래스로 추출
 2. 유사한 요청들을 분리 및 처리하는 Controller 클래스 생성
