@@ -66,4 +66,19 @@
 			SELECT * FROM product WHERE kind = #{kind} and useyn like('y')
 		]]>
 	</select>
+	
+	<insert id="insertItem" parameterType="itemVO">
+		<![CDATA[
+			INSERT INTO product (pseq, kind, name, price1, price2, price3, content, image)
+			VALUES (product_seq.NEXTVAL, #{kind}, #{name}, #{price1}, #{price2}, #{price3}, #{content}, #{image})
+		]]>
+	</insert>
+	
+	<update id="updateProduct" parameterType="itemVO">
+		<![CDATA[
+			UPDATE product SET kind = #{kind}, useyn = #{useyn}, name = #{name}, 
+			price1 = #{price1}, price2 = #{price2}, price3 = #{price3}, content = #{content}, 
+			image = #{image}, bestyn = #{bestyn} WHERE pseq = #{pseq}
+		]]>
+	</update>
 </mapper>

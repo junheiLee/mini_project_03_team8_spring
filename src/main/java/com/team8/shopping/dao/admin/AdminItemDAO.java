@@ -36,7 +36,16 @@ public class AdminItemDAO {
 		return sqlSession.selectOne("mapper.item.getProductCntByKeyword", keyword);
 	}
 	
-	public  List<ItemVO> getProduct(String pseq) {
-		return sqlSession.selectList("mapper.item.getProduct", pseq);
+	public ItemVO getProduct(String pseq) throws DataAccessException {
+		return sqlSession.selectOne("mapper.item.getProduct", pseq);
 	}
+	
+	public void insertItem(ItemVO itemVO) {
+		sqlSession.insert("mapper.item.insertItem", itemVO);
+	}
+	
+	public void updateProduct(ItemVO itemVO) {
+		sqlSession.update("mapper.item.updateProduct", itemVO);
+	}
+	
 }

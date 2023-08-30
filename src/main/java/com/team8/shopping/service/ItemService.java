@@ -26,7 +26,7 @@ public class ItemService {
 	}
 	
 	@Transactional(readOnly = true)
-	public List<ItemVO> getProduct(String pseq) {
+	public ItemVO getProduct(String pseq) {
 		return itemDAO.getProduct(pseq);
 	}
 	

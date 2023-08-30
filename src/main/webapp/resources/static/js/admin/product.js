@@ -41,7 +41,7 @@ function go_save(contextPath)
 	} else if (theForm.content.value == '') {
 		alert('상품상세를 입력하세요.');
 		theForm.content.focus();
-	} else if (theForm.image.value == '') {
+	} else if (theForm.imageFile.value == '') {
 		alert('상품이미지들 입력하세요.');
 		theForm.image.focus();
 	} else {
@@ -54,7 +54,7 @@ function go_save(contextPath)
 		// 디비에 추가하기 위한 페이지인 product_save.jsp로 이동하되
 		// 입력받은 상품 코드를 쿼리 스트링 형태로 전달한다.
 		// 상품 코드로 폴더를 만들어 거기에 이미지 파일을 업로드한다.
-		theForm.action = contextPath + "/admin/items/write";
+		theForm.action = contextPath + "/admin/item/write";
 		theForm.submit();
 	}
 }
@@ -67,7 +67,7 @@ function removeComma(input) // ,을 빼고 값을 다시 넣어준다.
 function go_mov(contextPath)
 {
 	var theForm = document.frm;
-	theForm.action = contextPath + "/admin/items/list";
+	theForm.action = contextPath + "/admin/item/listProduct";
 	theForm.submit();
 }
 //projectList.jsp
@@ -96,21 +96,21 @@ function go_detail(page, pseq, contextPath) {
 
 function go_wrt(contextPath) {
 	var theForm = document.frm;
-	theForm.action = contextPath + "/admin/items/writeForm";
+	theForm.action = contextPath + "/admin/item/writeForm";
 	theForm.submit();
 }
 // **************** productDetail.jsp
 function go_list(tpage, contextPath) {
 	var theForm = document.frm;
 	//상품 리스트로 이동하되 현재 페이지를 쿼리 스트링으로 넘긴다.
-	theForm.action = contextPath + "/admin/item/listProduct?tpage=" + tpage;
+	theForm.action = contextPath + "/admin/item/listProduct?page=" + tpage;
 	theForm.submit();
 }
 // **************** productDetail.jsp
 function go_mod(tpage, pseq, contextPath) {
 	var theForm = document.frm;
 	//현재 페이지를 쿼리 스트링으로 넘긴다.
-	theForm.action = contextPath + "/admin/items/updateForm?tpage=" + tpage+"&pseq="+pseq;
+	theForm.action = contextPath + "/admin/item/updateForm?page=" + tpage+"&pseq="+pseq;
 	theForm.submit();
 }
 
@@ -136,11 +136,16 @@ function go_mod_save(tpage, pseq, contextPath) {
 		if (confirm('수정하시겠습니까?')) {
 			// [1] 상품을 삭제하지 않는 대신 사용하지 않음을 products 테이블의 useyn 컬럼에 1을 채워 넣기 위해서
 			// useyns hidden 태그에 1을 지정한다.
-			if (theForm.useyn.checked == true) {
+			if (theForm.useyns.checked == true) {
 				theForm.useyn.value = "y";
-			} 
-			if(theForm.bestyn.checked == true) {
+			} else {
+				theForm.useyn.value = "n";
+			}
+			
+			if(theForm.bestyns.checked == true) {
 				theForm.bestyn.value = "y";
+			} else {
+				theForm.bestyn.value = "n";
 			}
 			theForm.encoding = "multipart/form-data";
 			// theForm.seq.value=seq;
@@ -149,7 +154,7 @@ function go_mod_save(tpage, pseq, contextPath) {
 			theForm.price3.value = removeComma(theForm.price3);
 			// [2] products 테이블의 상품 정보를 수정하는 처리를 하는 product_modsave.jsp 페이지로
 			// 이동하되 상품 코드를 전달해준다. 상품코드로 폴더를 생성해서 그곳에 이미지 파일을 업로드하기 때문이다.			
-			theForm.action = contextPath + "/admin/items/update";
+			theForm.action = contextPath + "/admin/item/update";
 			theForm.submit();
 		}
 	}

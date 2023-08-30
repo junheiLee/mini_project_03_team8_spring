@@ -33,6 +33,7 @@ public class AdminItemService {
 		return itemList;
 	}
 	
+	@Transactional(readOnly = true)
 	public PageBean getPageBean(int currentPage, String keyword) {
 		PageBean pageBean = null;
 		int productCnt = -1;
@@ -45,7 +46,18 @@ public class AdminItemService {
 		return pageBean;
 	}
 	
-	public List<ItemVO> getProduct(String pseq) {
+	@Transactional(readOnly = true)
+	public ItemVO getProduct(String pseq) {
 		return adminItemDAO.getProduct(pseq);
+	}
+	
+	@Transactional
+	public void insertItem(ItemVO itemVO) {
+		adminItemDAO.insertItem(itemVO);
+	}
+	
+	@Transactional
+	public void updateProduct(ItemVO itemVO) {
+		adminItemDAO.updateProduct(itemVO);
 	}
 }

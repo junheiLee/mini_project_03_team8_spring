@@ -19,16 +19,14 @@ public class ItemController {
 	private ItemService itemService;
 	
 	@RequestMapping(value = "/detailProduct")
-	public String itemDetail(Model model, @RequestParam String pseq){
-		List<ItemVO> getProduct = itemService.getProduct(pseq);
-	    if (!getProduct.isEmpty()) {
-	        model.addAttribute("productVO", getProduct.get(0));
-	    }
+	public String itemDetail(Model model, @RequestParam String pseq) {
+		ItemVO itemVO = itemService.getProduct(pseq);
+		model.addAttribute("productVO", itemVO);
 	    return "product/productDetail";
 	}
 	
 	@RequestMapping(value="/kindProduct")
-	public String itemKind(Model model, String kind){
+	public String itemKind(Model model, String kind) {
 		List<ItemVO> listKindProduct = itemService.listKindProduct(kind);
 		model.addAttribute("listKindProduct",listKindProduct);
 		if(kind != null) {
