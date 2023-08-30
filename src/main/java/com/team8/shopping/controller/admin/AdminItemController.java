@@ -90,7 +90,6 @@ public class AdminItemController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update(ItemVO itemVO, @RequestParam("imageFile") MultipartFile imageFile)
             throws IOException {
-		System.out.println(itemVO.getImage() + "========" + itemVO.getUseyn() + "======" + itemVO.getBestyn());
         String savePath = servletContext.getRealPath("/resources/static/images/product_images/");
         if (!imageFile.isEmpty()) {
             String originalFilename = imageFile.getOriginalFilename();
