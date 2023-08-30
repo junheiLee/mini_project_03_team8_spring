@@ -23,8 +23,8 @@ public class ItemDAO {
 		return sqlSession.selectList("mapper.item.listBestProduct");
 	}
 	
-	public  List<ItemVO> getProduct(String pseq) {
-		return sqlSession.selectList("mapper.item.getProduct", pseq);
+	public ItemVO getProduct(String pseq) {
+		return sqlSession.selectOne("mapper.item.getProduct", pseq);
 	}
 	
 	public List<ItemVO> listKindProduct(String kind){

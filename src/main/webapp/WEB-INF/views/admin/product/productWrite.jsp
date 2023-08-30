@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/admin/header.jsp"%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%@ include file="/WEB-INF/views/admin/header.jsp"%>
+<%@ include file="/WEB-INF/views/admin/sub_menu.jsp"%>
 
 <article>
 	<h1>상품등록</h1>
@@ -46,7 +46,7 @@
 				<th>상품이미지</th>
 				<td width="343" colspan="5">
 					<!--  [2] 파일 업로드를 하기 위한 input 태그는 타입 속성 값을 file로 지정해야 한다.  --> 
-					<input type="file" name="image">
+					<input type="file" name="imageFile">
 				</td>
 			</tr>
 		</table>
@@ -55,6 +55,6 @@
 		<input class="btn" type="button" value="취소" onClick="go_mov('${contextPath}')">
 	</form>
 </article>
-<%@ include file="/admin/footer.jsp"%>
+<%@ include file="/WEB-INF/views/admin/footer.jsp"%>
 </body>
 </html>

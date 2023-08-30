@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/admin/header.jsp"%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%@ include file="/WEB-INF/views/admin/header.jsp"%>
+<%@ include file="/WEB-INF/views/admin/sub_menu.jsp"%>
 
 <article>
 	<h1>상품수정</h1>
 	<form name="frm" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="pseq" value="${productVO.pseq}"> 
 		<input type="hidden" name="code"> 
-		<input type="hidden" name="nonmakeImg" value="${productVO.image}">
+		<input type="hidden" name="useyn"> 
+		<input type="hidden" name="bestyn"> 
+		<input type="hidden" name="image" value="${productVO.image}">
 		
 		<table id="list">
 			<tr>
@@ -50,19 +52,19 @@
 				<th>베스트상품</th>
 				<td><c:choose>
 						<c:when test='${productVO.bestyn=="y"}'>
-							<input type="checkbox" name="bestyn" value="y" checked="checked">
+							<input type="checkbox" name="bestyns" value="y" checked="checked">
 						</c:when>
 						<c:otherwise>
-							<input type="checkbox" name="bestyn" value="n">
+							<input type="checkbox" name="bestyns" value="n">
 						</c:otherwise>
 					</c:choose></td>
 				<th>사용유무</th>
 				<td><c:choose>
 						<c:when test='${productVO.useyn=="y"}'>
-							<input type="checkbox" name="useyn" value="y" checked>
+							<input type="checkbox" name="useyns" value="y" checked>
 						</c:when>
 						<c:otherwise>
-							<input type="checkbox" name="useyn" value="n">
+							<input type="checkbox" name="useyns" value="n">
 						</c:otherwise>
 					</c:choose></td>
 			</tr>
@@ -75,8 +77,8 @@
 			<tr>
 				<th>상품이미지</th>
 				<td colspan="5">
-					<img src="${contextPath }/product_images/${productVO.image}" width="200pt"> <br> 
-					<input type="file" name="image">
+					<img src="${contextPath }/resources/static/images/product_images/${productVO.image}" width="200pt"> <br> 
+					<input type="file" name="imageFile">
 				</td>
 			</tr>
 		</table>
@@ -84,6 +86,6 @@
 		<input class="btn" type="button" value="취소" onClick="go_mov('${contextPath}')">
 	</form>
 </article>
-<%@ include file="/admin/footer.jsp"%>
+<%@ include file="/WEB-INF/views/admin/footer.jsp"%>
 </body>
 </html>

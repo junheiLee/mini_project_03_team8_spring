@@ -17,7 +17,7 @@
 		<c:forEach items="${newProductList }" var="productVO">
 			<div id="item">
 				<a
-					href="${contextPath }/items?pseq=${productVO.pseq}">
+					href="${contextPath }/item/detailProduct?pseq=${productVO.pseq}">
 					<img src="${contextPath }/resources/static/images/product_images/${productVO.image}" />
 					<h3>${productVO.name}</h3>
 					<p>${productVO.price2}</p>

@@ -25,7 +25,7 @@
 	<div id="wrap">
 		<header>
 			<div id="logo">
-				<a href="${contextPath }/admin/members/loginForm.do"> <img
+				<a href="${contextPath }/admin/member/login"> <img
 					style="width: 800px" src="${contextPath }/resources/static/images/admin/bar_01.gif"> <img
 					src="${contextPath }/resources/static/images/admin/text.gif">
 				</a>
